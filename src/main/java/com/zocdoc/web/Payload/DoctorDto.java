@@ -16,6 +16,8 @@ public class DoctorDto {
     private Doctor doctor;
     private List<Review> reviews;
     private double ratingPercentage;
+    private int yearsOfExperience; // Years of experience of the doctor
+    private String qualification; // Qualifications of the doctor
 
 }
 
