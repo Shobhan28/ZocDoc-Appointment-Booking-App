@@ -29,7 +29,13 @@ public class DoctorServiceImpl implements DoctorService {
         return doctorRepo.save(doctor);
 
     }
-        @Override
+
+    @Override
+    public List<Doctor> getAllDoctors() {
+        return doctorRepo.findAll();
+    }
+
+    @Override
         public List<Appointment> getMyAppointments(Long doctorId) {
             Doctor myDoc = doctorRepo.findById(doctorId)
                     .orElseThrow(() -> new EntityNotFoundException("Doctor not found with ID: " + doctorId));
