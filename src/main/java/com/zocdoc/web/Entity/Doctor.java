@@ -16,7 +16,7 @@ import java.util.List;
 @Entity //This annotation marks the class as a JPA (Java Persistence API) entity,
 // indicating that instances of this class will be mapped to a database table.
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class ,
-        scope = Doctor.class , property = "doctorId")
+        scope = Doctor.class , property = "id")
 @Table(name ="doctors")
 public class Doctor {
 
@@ -28,6 +28,8 @@ public class Doctor {
 
     @Enumerated(EnumType.STRING)
     private Specialization specialization;
+
+    private String address; // Address of the doctor's workplace
 
     @OneToMany(mappedBy = "doctor")
     private List<Appointment> appointments;
