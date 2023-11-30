@@ -9,6 +9,8 @@ public interface DoctorService {
 
     Doctor addDoctor(Doctor doctor);
 
+    public List<Doctor> getAllDoctors();
+
     List<Appointment> getMyAppointments(Long doctorId);
     // This method retrieves a list of appointments associated with a specific doctor.
 }
