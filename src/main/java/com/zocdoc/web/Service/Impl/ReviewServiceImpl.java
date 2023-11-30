@@ -8,8 +8,12 @@ import com.zocdoc.web.Repository.PatientRepository;
 import com.zocdoc.web.Repository.ReviewRepository;
 import com.zocdoc.web.Service.ReviewService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 
+@Service
 public class ReviewServiceImpl implements ReviewService {
 
     @Autowired
@@ -23,15 +27,22 @@ public class ReviewServiceImpl implements ReviewService {
 
     @Override
     public Review createReview(Review review) {
-        Doctor doctor = doctorRepo.findById(review.getDoctorId()).get();
+        Doctor doctor = doctorRepo.findById(review.getDoctor().getId()).get();
 
-        Patient patient = patientRepo.findById(review.getPatentId()).get();
+        Patient patient = patientRepo.findById(review.getPatient().getPatientId()).get();
 
         Review saveReview = null;
         if (doctor != null || patient != null) {
             saveReview = reviewRepo.save(review);
         }
         return saveReview;
+    }
+
+    @Override
+    public List<Review> getReviewByDoctorId(long doctorId) {
+        List<Review> review = reviewRepo.findByDoctorId(doctorId);
+
+        return review;
     }
 }
 
