@@ -1,6 +1,7 @@
 package com.zocdoc.web.Service.Impl;
 
 import com.zocdoc.web.Entity.Appointment;
+import com.zocdoc.web.Model.AppointmentKey;
 import com.zocdoc.web.Repository.AppointmentRepository;
 import com.zocdoc.web.Service.AppointmentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,5 +23,9 @@ public class AppointmentServiceImpl implements AppointmentService {
         } else {
             throw new IllegalStateException("Appointment with id already present");
         }
+    }
+
+    public void cancelAppointment(AppointmentKey key) {
+        appointmentRepo.deleteById(key);
     }
 }
