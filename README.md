@@ -306,7 +306,7 @@ Example configuration for MySQL:
 ```properties
 spring.datasource.url=jdbc:mysql://localhost:3306/HospitalManagement
 spring.datasource.username=root
-spring.datasource.password=9892321787@As
+spring.datasource.password=xxx
 spring.datasource.driverClassName=com.mysql.cj.jdbc.Driver
 spring.jpa.database-platform=org.hibernate.dialect.MySQLDialect
 ```
@@ -318,15 +318,3 @@ Please replace `spring.datasource.url`, `spring.datasource.username`, and `sprin
 The Doctor's Appointment Application is a Spring Boot-based system that simplifies doctor-patient appointment management. It provides RESTful API endpoints for booking and canceling appointments, user authentication, and doctor profiles.
 
 The application is built on a solid foundation, utilizing Spring Boot and MySQL for data storage, and it follows best practices for clean code, separation of concerns, and secure user data handling.
-
-### License
-
-This project is licensed under the [BSD 3-Clause License](LICENSE).
-
-### Acknowledgments
-
-We would like to thank the Spring Boot and Java communities for providing excellent tools, frameworks, and resources that have contributed to the development of this project.
-
-### Contact
-
-For questions or feedback, please contact [Amit Ashok Swain](mailto:business.amitswain@gmail.com).
